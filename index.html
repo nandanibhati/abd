@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        .category-boxes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-box:hover {
+            background-color: #4a897d;
+        }
+
+        .category-box img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .category-box span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select a Quiz Category</h1>
+
+        <!-- Category Selection -->
+        <div class="category-boxes">
+            <div class="category-box" onclick="goToSubcategory('anatomy')">
+                <img src="images/anatomy.png" alt="anatomy Icon">
+                <span>Anatomy</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('physiology')">
+                <img src="images/physiology.jpg" alt="physiology Icon">
+                <span>Physiology</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('biochemistry')">
+                <img src="images/biochemistry.webp" alt="biochemistry Icon">
+                <span>Biochemistry</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('pharmacology')">
+                <img src="images/pharmacology.jpg" alt="pharmacology Icon">
+                <span>Pharmacology</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('pathology')">
+                <img src="images/pathology.webp" alt="pathology Icon">
+                <span>Pathology</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('microbiology')">
+                <img src="images/microbiology.jpg" alt="microbiology Icon">
+                <span>Microbiology and Paracitology</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('forensic_medicine')">
+                <img src="images/forensic.jpg" alt="forensic Icon">
+                <span>Forensic Medicine</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('preventive_and_social_medicine')">
+                <img src="images/prevention.webp" alt="prevention Icon">
+                <span>Preventive and Social Medicine</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('medicine')">
+                <img src="images/medicine.jpg" alt="medicine Icon">
+                <span>Medicine</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('surgery')">
+                <img src="images/surgery.webp" alt="surgery Icon">
+                <span>Surgery</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('pediatrics')">
+                <img src="images/pediatrics.jpg" alt="pediatrics Icon">
+                <span>Pediatrics</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('ophthalmology')">
+                <img src="images/opthalmology.png" alt="ophthalmology Icon">
+                <span>Ophthalmology</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('dermatology')">
+                <img src="images/dermatology.png" alt="dermatology Icon">
+                <span>Dermatology</span>
+            </div><div class="category-box" onclick="goToSubcategory('anesthesia')">
+                <img src="images/anesthesia.png" alt="anesthesia Icon">
+                <span>Anesthesia</span>
+            </div><div class="category-box" onclick="goToSubcategory('psychiatry')">
+                <img src="images/psychiatry.png" alt="psychiatry Icon">
+                <span>Psychiatry</span>
+            </div>
+            <div class="category-box" onclick="goToSubcategory('radiology')">
+                <img src="images/radiology.png" alt="radiology Icon">
+                <span>Radiology</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToSubcategory(category) {
+            window.location.href = `subcategory.html?category=${category}`;
+        }
+    </script>
+</body>
+
+</html> 

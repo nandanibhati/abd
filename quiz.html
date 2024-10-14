@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="quiz-title">Quiz</h1>
+        <div id="quiz-container" class="hidden">
+            <div id="questions"></div>
+            <button type="button" onclick="restartQuiz()">Restart Quiz</button>
+            <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get the category and subcategory from the URL
+        const params = new URLSearchParams(window.location.search);
+        const category = params.get('category');
+        const subcategory = params.get('subcategory');
+
+        // Display the quiz based on category and subcategory
+        if (category && subcategory) {
+            document.getElementById('quiz-title').innerText = `${category.charAt(0).toUpperCase() + category.slice(1)} - ${subcategory} Quiz`;
+            loadQuiz(category, subcategory);
+        } else {
+            document.body.innerHTML = "<h1>Invalid Category or Subcategory</h1>";
+        }
+
+        // Function to restart the quiz
+        function restartQuiz() {
+            window.location.href = 'index.html';  // Navigate back to the main page
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Quiz Results</h1>
+        <div id="result"></div>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+
+    <script>
+        // Get the score and total number of questions from the URL
+        const params = new URLSearchParams(window.location.search);
+        const score = parseInt(params.get('score'), 10);  // Parse score as an integer
+        const total = parseInt(params.get('total'), 10);  // Parse total as an integer
+
+        const resultDiv = document.getElementById('result');
+
+        // Display the score
+        resultDiv.innerText = `You scored ${score} out of ${total}`;
+
+        // Calculate the percentage score
+        const percentage = (score / total) * 100;
+
+        // Display a message based on the score percentage
+        const message = document.createElement('p');
+        if (percentage >= 80) {
+            message.innerText = "Great job! You passed!";
+            message.style.color = "green";
+        } else {
+            message.innerText = "Better luck next time!";
+            message.style.color = "red";
+        }
+
+        // Append the message to the result div
+        resultDiv.appendChild(message);
+
+        // Function to restart the quiz (navigate back to the index page)
+        function restartQuiz() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>
