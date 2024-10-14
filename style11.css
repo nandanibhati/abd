@@ -28,9 +28,9 @@ body {
   width: 100%;
   max-width: 500px;
   box-sizing: border-box;
+  overflow: auto; /* Allow scrolling if content exceeds the height */
+  max-height: 90vh; /* Set max height to 90% of viewport height */
 }
-
-
 
 /* Heading styling */
 h1 {
@@ -103,6 +103,27 @@ button {
 }
 
 /* Media queries for responsiveness */
+@media screen and (max-width: 480px) {
+  .container {
+      padding: 20px; /* Reduce padding for smaller screens */
+      /* max-width: 300px; */
+  }
+
+  h1 {
+      font-size: 2rem; /* Adjust heading size */
+  }
+
+  button {
+      font-size: 1rem; /* Reduce button font size */
+      padding: 10px; /* Reduce padding */
+  }
+
+  label,
+  select {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
       max-width: 600px;
